@@ -1,0 +1,128 @@
+/* Genel Ayarlar */
+:root {
+    --ana-renk: #ffffff;
+    --yazi-renk: #333333;
+    --kart-renk: #f4f4f4;
+    --vurgu-renk: #007bff;
+}
+
+/* Karanlık Mod Değişkenleri [cite: 18] */
+.karanlik-tema {
+    --ana-renk: #1a1a1a;
+    --yazi-renk: #f4f4f4;
+    --kart-renk: #2d2d2d;
+    --vurgu-renk: #ffcc00;
+}
+
+body {
+    background-color: var(--ana-renk);
+    color: var(--yazi-renk);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.3s;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigasyon */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background: var(--kart-renk);
+    align-items: center;
+}
+
+/* Hakkımda Bölümü */
+.profil-konteyner {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.profil-foto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--vurgu-renk);
+    object-fit: cover;
+}
+
+/* Yetenek Barları (Zorunlu Efekt) [cite: 20, 32] */
+.yetenek-alani {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cubuk-arkaplan {
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.cubuk-doluluk {
+    height: 20px;
+    background-color: var(--vurgu-renk);
+    border-radius: 10px;
+    width: 0; /* JS ile dolacak */
+    transition: width 1.5s ease-in-out;
+}
+
+/* Proje Kartları (Dinamik Listeleme) [cite: 17, 35] */
+.proje-galerisi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 5%;
+}
+
+.proje-karti {
+    background-color: var(--kart-renk);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.proje-karti:hover {
+    transform: translateY(-5px);
+}
+
+.proje-karti img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Filtre Butonları */
+.filtre-butonlari {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--vurgu-renk);
+    color: white;
+}
+
+/* Responsive Tasarım (Zorunlu) [cite: 8, 32] */
+@media (max-width: 768px) {
+    .proje-galerisi {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* İletişim */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--kart-renk);
+}
