@@ -162,3 +162,29 @@ footer {
     text-decoration: none;
     font-weight: bold;
 }
+/* Ders Kartları Tasarımı */
+.ders-konteyner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 8%;
+}
+
+.ders-karti {
+    background-color: var(--kart-renk);
+    color: var(--vurgu-renk);
+    border: 1px solid var(--vurgu-renk);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.ders-karti:hover {
+    background-color: var(--vurgu-renk);
+    color: white;
+    transform: scale(1.05);
+}
