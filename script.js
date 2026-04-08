@@ -17,7 +17,7 @@ const projeListesi = [
         baslik: "Sürdürülebilir E-Ticaret",
         kategori: "Web",
         detay: "Sadece çevre dostu ürünlerin satıldığı modern bir arayüz çalışması.",
-        gorsel: "https://images.placeholder.com/300x200" // Buraya istersen kendi görselini koyabilirsin
+        gorsel: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400"
     },
     {
         baslik: "Güneş Paneli Takip Sistemi",
@@ -37,6 +37,7 @@ const projeKonteyner = document.getElementById("proje-alani");
 
 // 2. Projeleri ekrana basan fonksiyon (Zorunlu: forEach kullanımı)
 function projeleriGoster(liste) {
+    if (!projeKonteyner) return; // Hata yönetimi
     projeKonteyner.innerHTML = ""; 
     liste.forEach((proje) => {
         const kart = `
@@ -51,7 +52,7 @@ function projeleriGoster(liste) {
     });
 }
 
-// 3. İnteraktif Filtreleme (Zorunlu: filter() metodu ve en az 2 kategori)
+// 3. İnteraktif Filtreleme (Zorunlu: filter() metodu)
 function projeleriFiltrele(kategoriIsmi) {
     if (kategoriIsmi === 'hepsi') {
         projeleriGoster(projeListesi);
@@ -63,20 +64,22 @@ function projeleriFiltrele(kategoriIsmi) {
 
 // 4. Karanlık/Aydınlık Mod (Zorunlu)
 const temaButonu = document.getElementById("tema-degistir");
-temaButonu.addEventListener("click", () => {
-    document.body.classList.toggle("karanlik-tema");
-});
+if (temaButonu) {
+    temaButonu.addEventListener("click", () => {
+        document.body.classList.toggle("karanlik-tema");
+    });
+}
 
 // 5. Görsel Efektler (Zorunlu: En az 2 tane)
 
-// A - Daktilo Efekti (Temaya özel kelimelerle)
+// A - Daktilo Efekti
 const metinAlani = document.querySelector(".daktilo-metni");
 const kelimeler = ["Doğa Dostu Yazılımcı", "Sürdürülebilir Çözümler", "Yeşil Kod Geliştiricisi"];
 let kelimeIndex = 0;
 let harfIndex = 0;
 
 function daktiloYaz() {
-    if (metinAlani) { // Hata almamak için kontrol
+    if (metinAlani) {
         if (harfIndex < kelimeler[kelimeIndex].length) {
             metinAlani.textContent += kelimeler[kelimeIndex].charAt(harfIndex);
             harfIndex++;
