@@ -1,5 +1,4 @@
-// 1. Proje verilerini tutan dizi (Zorunlu: En az 5 proje)
-// Doğa dostu temaya uygun içeriklerle güncellendi.
+
 const projeListesi = [
     {
         baslik: "Yeşil Şehir Haritası",
@@ -35,9 +34,9 @@ const projeListesi = [
 
 const projeKonteyner = document.getElementById("proje-alani");
 
-// 2. Projeleri ekrana basan fonksiyon (Zorunlu: forEach kullanımı)
+
 function projeleriGoster(liste) {
-    if (!projeKonteyner) return; // Hata yönetimi
+    if (!projeKonteyner) return; 
     projeKonteyner.innerHTML = ""; 
     liste.forEach((proje) => {
         const kart = `
@@ -52,7 +51,7 @@ function projeleriGoster(liste) {
     });
 }
 
-// 3. İnteraktif Filtreleme (Zorunlu: filter() metodu)
+
 function projeleriFiltrele(kategoriIsmi) {
     if (kategoriIsmi === 'hepsi') {
         projeleriGoster(projeListesi);
@@ -62,7 +61,7 @@ function projeleriFiltrele(kategoriIsmi) {
     }
 }
 
-// 4. Karanlık/Aydınlık Mod (Zorunlu)
+
 const temaButonu = document.getElementById("tema-degistir");
 if (temaButonu) {
     temaButonu.addEventListener("click", () => {
@@ -70,9 +69,9 @@ if (temaButonu) {
     });
 }
 
-// 5. Görsel Efektler (Zorunlu: En az 2 tane)
 
-// A - Daktilo Efekti
+
+
 const metinAlani = document.querySelector(".daktilo-metni");
 const kelimeler = ["Doğa Dostu Yazılımcı", "Sürdürülebilir Çözümler", "Yeşil Kod Geliştiricisi"];
 let kelimeIndex = 0;
@@ -101,7 +100,7 @@ function sil() {
     }
 }
 
-// B - İnteraktif Yetenek Barları
+
 function yetenekCubuklariniDoldur() {
     const cubuklar = document.querySelectorAll(".cubuk-doluluk");
     cubuklar.forEach(cubuk => {
@@ -110,7 +109,7 @@ function yetenekCubuklariniDoldur() {
     });
 }
 
-// Sayfa yüklendiğinde çalışacaklar
+
 window.onload = () => {
     projeleriGoster(projeListesi);
     daktiloYaz();

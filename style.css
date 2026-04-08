@@ -1,14 +1,14 @@
-/* Doğa Dostu Renk Paleti */
+
 :root {
-    --ana-renk: #f9fbf9;       /* Çok açık gri-yeşil arkaplan */
-    --yazi-renk: #1b3022;      /* Koyu orman yeşili yazılar */
-    --kart-renk: #ffffff;      /* Beyaz kartlar */
-    --vurgu-renk: #4f7942;     /* Yaprak yeşili (Ana vurgu) */
-    --ikincil-vurgu: #8b5a2b;  /* Toprak kahvesi */
+    --ana-renk: #f9fbf9;       
+    --yazi-renk: #1b3022;     
+    --kart-renk: #ffffff;      
+    --vurgu-renk: #4f7942;     
+    --ikincil-vurgu: #8b5a2b;  
     --buton-hover: #3d5e33;
 }
 
-/* Karanlık Mod */
+
 .karanlik-tema {
     --ana-renk: #0f1a13;
     --yazi-renk: #e8f3e8;
@@ -26,7 +26,7 @@ body {
     line-height: 1.7;
 }
 
-/* Navigasyon */
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -42,7 +42,7 @@ nav {
     font-size: 1.4rem;
 }
 
-/* Profil Bölümü */
+
 .profil-konteyner {
     text-align: center;
     padding: 60px 20px;
@@ -63,7 +63,7 @@ nav {
     border-radius: 50%;
 }
 
-/* Yetenek Barları */
+
 .yetenek-alani {
     max-width: 650px;
     margin: 0 auto;
@@ -85,7 +85,7 @@ nav {
     transition: width 1.8s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
-/* Akademik Birikim (Ders Kartları) */
+
 .ders-konteyner {
     display: flex;
     flex-wrap: wrap;
@@ -104,7 +104,7 @@ nav {
     transition: 0.3s;
 }
 
-/* Yaprak Temalı Proje Kartları (Güncellenmiş Bölüm) */
+
 .proje-galerisi {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -138,7 +138,7 @@ nav {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Butonlar ve Linkler */
+
 button {
     padding: 12px 25px;
     cursor: pointer;
