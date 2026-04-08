@@ -1,45 +1,44 @@
-// 1. Proje verilerini tutan dizi (Zorunlu: En az 5 proje [cite: 13])
-// Tüm değişkenler Türkçe ve anlamlıdır[cite: 25, 32].
+// 1. Proje verilerini tutan dizi (Zorunlu: En az 5 proje)
+// Doğa dostu temaya uygun içeriklerle güncellendi.
 const projeListesi = [
     {
-        baslik: "Hava Durumu Uygulaması",
+        baslik: "Yeşil Şehir Haritası",
         kategori: "Web",
-        detay: "JavaScript ile anlık hava durumu verisi çeken uygulama.",
-        gorsel: "https://via.placeholder.com/300x200"
+        detay: "Şehirdeki geri dönüşüm noktalarını ve parkları gösteren interaktif harita.",
+        gorsel: "https://images.unsplash.com/photo-1518005020250-5803612467d1?auto=format&fit=crop&w=400"
     },
     {
-        baslik: "Yemek Tarifleri Mobil",
+        baslik: "Karbon Ayak İzi Hesaplayıcı",
         kategori: "Mobil",
-        detay: "React Native ile geliştirilmiş tarif rehberi.",
-        gorsel: "https://via.placeholder.com/300x200"
+        detay: "Günlük aktivitelerin doğaya etkisini hesaplayan React Native uygulaması.",
+        gorsel: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400"
     },
     {
-        baslik: "E-Ticaret Arayüzü",
+        baslik: "Sürdürülebilir E-Ticaret",
         kategori: "Web",
-        detay: "Modern alışveriş sitesi tasarımı ve sepet mantığı.",
-        gorsel: "https://via.placeholder.com/300x200"
+        detay: "Sadece çevre dostu ürünlerin satıldığı modern bir arayüz çalışması.",
+        gorsel: "https://images.placeholder.com/300x200" // Buraya istersen kendi görselini koyabilirsin
     },
     {
-        baslik: "Banka Takip Sistemi",
+        baslik: "Güneş Paneli Takip Sistemi",
         kategori: "Yazılım",
-        detay: "Gelir-gider tablolarını yöneten finans yazılımı.",
-        gorsel: "https://via.placeholder.com/300x200"
+        detay: "Panellerden gelen enerji verilerini anlık olarak grafiklere döken yazılım.",
+        gorsel: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=400"
     },
     {
-        baslik: "Kişisel Blog",
+        baslik: "Doğa Blogu",
         kategori: "Web",
-        detay: "SEO uyumlu, hızlı yüklenen blog altyapısı.",
-        gorsel: "https://via.placeholder.com/300x200"
+        detay: "Sıfır atık yaşam tarzını teşvik eden, SEO uyumlu blog altyapısı.",
+        gorsel: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=400"
     }
 ];
 
 const projeKonteyner = document.getElementById("proje-alani");
 
-// 2. Projeleri ekrana basan fonksiyon (Zorunlu: forEach kullanımı [cite: 17, 32])
+// 2. Projeleri ekrana basan fonksiyon (Zorunlu: forEach kullanımı)
 function projeleriGoster(liste) {
     projeKonteyner.innerHTML = ""; 
     liste.forEach((proje) => {
-        // Kartlarda en az 3 farklı veri (Ad, Kategori, Detay) gösterilmektedir.
         const kart = `
             <div class="proje-karti">
                 <img src="${proje.gorsel}" alt="${proje.baslik}">
@@ -52,37 +51,39 @@ function projeleriGoster(liste) {
     });
 }
 
-// 3. İnteraktif Filtreleme (Zorunlu: filter() metodu ve en az 2 kategori [cite: 19, 32, 35])
+// 3. İnteraktif Filtreleme (Zorunlu: filter() metodu ve en az 2 kategori)
 function projeleriFiltrele(kategoriIsmi) {
     if (kategoriIsmi === 'hepsi') {
-        projeleriGoster(projeListesi); // Tümünü göster butonu 
+        projeleriGoster(projeListesi);
     } else {
         const filtrelenmisProjeler = projeListesi.filter(p => p.kategori === kategoriIsmi);
         projeleriGoster(filtrelenmisProjeler);
     }
 }
 
-// 4. Karanlık/Aydınlık Mod (Zorunlu [cite: 18])
+// 4. Karanlık/Aydınlık Mod (Zorunlu)
 const temaButonu = document.getElementById("tema-degistir");
 temaButonu.addEventListener("click", () => {
     document.body.classList.toggle("karanlik-tema");
 });
 
-// 5. Görsel Efektler (Zorunlu: En az 2 tane )
+// 5. Görsel Efektler (Zorunlu: En az 2 tane)
 
-// A - Daktilo Efekti (Typewriter)
+// A - Daktilo Efekti (Temaya özel kelimelerle)
 const metinAlani = document.querySelector(".daktilo-metni");
-const kelimeler = ["Geleceğin Yazılımcısı", "Web Tasarımcı", "Problem Çözücü"];
+const kelimeler = ["Doğa Dostu Yazılımcı", "Sürdürülebilir Çözümler", "Yeşil Kod Geliştiricisi"];
 let kelimeIndex = 0;
 let harfIndex = 0;
 
 function daktiloYaz() {
-    if (harfIndex < kelimeler[kelimeIndex].length) {
-        metinAlani.textContent += kelimeler[kelimeIndex].charAt(harfIndex);
-        harfIndex++;
-        setTimeout(daktiloYaz, 150);
-    } else {
-        setTimeout(sil, 2000);
+    if (metinAlani) { // Hata almamak için kontrol
+        if (harfIndex < kelimeler[kelimeIndex].length) {
+            metinAlani.textContent += kelimeler[kelimeIndex].charAt(harfIndex);
+            harfIndex++;
+            setTimeout(daktiloYaz, 150);
+        } else {
+            setTimeout(sil, 2000);
+        }
     }
 }
 
@@ -97,7 +98,7 @@ function sil() {
     }
 }
 
-// B - İnteraktif Yetenek Barları (Skill Bars)
+// B - İnteraktif Yetenek Barları
 function yetenekCubuklariniDoldur() {
     const cubuklar = document.querySelectorAll(".cubuk-doluluk");
     cubuklar.forEach(cubuk => {

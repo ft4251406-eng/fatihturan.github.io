@@ -1,128 +1,164 @@
-/* Genel Ayarlar */
+/* Doğa Dostu Renk Paleti */
 :root {
-    --ana-renk: #ffffff;
-    --yazi-renk: #333333;
-    --kart-renk: #f4f4f4;
-    --vurgu-renk: #007bff;
+    --ana-renk: #f9fbf9;       /* Çok açık gri-yeşil arkaplan */
+    --yazi-renk: #1b3022;      /* Koyu orman yeşili yazılar */
+    --kart-renk: #ffffff;      /* Beyaz kartlar */
+    --vurgu-renk: #4f7942;     /* Yaprak yeşili (Ana vurgu) */
+    --ikincil-vurgu: #8b5a2b;  /* Toprak kahvesi */
+    --buton-hover: #3d5e33;
 }
 
-/* Karanlık Mod Değişkenleri [cite: 18] */
+/* Karanlık Mod: Orman Gecesi Teması  */
 .karanlik-tema {
-    --ana-renk: #1a1a1a;
-    --yazi-renk: #f4f4f4;
-    --kart-renk: #2d2d2d;
-    --vurgu-renk: #ffcc00;
+    --ana-renk: #0f1a13;       /* Çok koyu yeşil siyah */
+    --yazi-renk: #e8f3e8;      /* Yumuşak krem yazılar */
+    --kart-renk: #1a291f;      /* Koyu yeşil kartlar */
+    --vurgu-renk: #7db373;     /* Açık fıstık yeşili */
+    --ikincil-vurgu: #d2a679;  /* Açık toprak tonu */
 }
 
 body {
     background-color: var(--ana-renk);
     color: var(--yazi-renk);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: 0.3s;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    transition: all 0.4s ease;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* Navigasyon */
+/* Navigasyon: Doğal Geçiş */
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 5%;
+    padding: 20px 8%;
     background: var(--kart-renk);
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-/* Hakkımda Bölümü */
+.logo {
+    font-weight: bold;
+    color: var(--vurgu-renk);
+    font-size: 1.4rem;
+}
+
+/* Hakkımda: Daha Yumuşak Bir Karşılama */
 .profil-konteyner {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, var(--kart-renk), var(--ana-renk));
 }
 
 .profil-foto {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid var(--vurgu-renk);
+    width: 160px;
+    height: 160px;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; /* Organik, yuvarlak olmayan şekil */
+    border: 4px solid var(--vurgu-renk);
     object-fit: cover;
+    margin-bottom: 20px;
+    transition: 0.5s;
 }
 
-/* Yetenek Barları (Zorunlu Efekt) [cite: 20, 32] */
+.profil-foto:hover {
+    border-radius: 50%; /* Üstüne gelince düzelen efekt */
+}
+
+/* Yetenek Barları (Skill Bars) [cite: 20, 32] */
 .yetenek-alani {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
 }
 
 .cubuk-arkaplan {
-    background-color: #ddd;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .cubuk-doluluk {
-    height: 20px;
-    background-color: var(--vurgu-renk);
-    border-radius: 10px;
-    width: 0; /* JS ile dolacak */
-    transition: width 1.5s ease-in-out;
+    height: 12px;
+    background: linear-gradient(90deg, var(--vurgu-renk), var(--ikincil-vurgu));
+    border-radius: 20px;
+    width: 0;
+    transition: width 1.8s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
-/* Proje Kartları (Dinamik Listeleme) [cite: 17, 35] */
+/* Proje Galerisi (Dinamik Listeleme Tasarımı) [cite: 17, 35] */
 .proje-galerisi {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px 8%;
 }
 
 .proje-karti {
     background-color: var(--kart-renk);
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    border-radius: 15px; /* Daha yumuşak köşeler */
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.02);
+    transition: all 0.3s ease;
 }
 
 .proje-karti:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(79, 121, 66, 0.15); /* Yeşil tonlu gölge */
 }
 
 .proje-karti img {
     width: 100%;
-    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-/* Filtre Butonları */
-.filtre-butonlari {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Doğal Butonlar */
 button {
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 12px 25px;
+    margin: 8px;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid var(--vurgu-renk);
+    border-radius: 30px; /* Yuvarlak hatlar */
+    background-color: transparent;
+    color: var(--vurgu-renk);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
     background-color: var(--vurgu-renk);
     color: white;
 }
 
-/* Responsive Tasarım (Zorunlu) [cite: 8, 32] */
+/* Responsive Düzenlemeler [cite: 8, 32] */
 @media (max-width: 768px) {
     .proje-galerisi {
         grid-template-columns: 1fr;
+        padding: 20px 5%;
     }
     
-    header h1 {
-        font-size: 1.5rem;
+    .profil-foto {
+        width: 130px;
+        height: 130px;
     }
 }
 
-/* İletişim */
+/* İletişim ve Footer */
 footer {
     text-align: center;
-    padding: 40px;
+    padding: 60px 20px;
     background-color: var(--kart-renk);
+    margin-top: 50px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.sosyal-linkler a {
+    color: var(--ikincil-vurgu);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
