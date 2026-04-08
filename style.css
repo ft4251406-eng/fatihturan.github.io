@@ -8,26 +8,25 @@
     --buton-hover: #3d5e33;
 }
 
-/* Karanlık Mod: Orman Gecesi Teması  */
+/* Karanlık Mod */
 .karanlik-tema {
-    --ana-renk: #0f1a13;       /* Çok koyu yeşil siyah */
-    --yazi-renk: #e8f3e8;      /* Yumuşak krem yazılar */
-    --kart-renk: #1a291f;      /* Koyu yeşil kartlar */
-    --vurgu-renk: #7db373;     /* Açık fıstık yeşili */
-    --ikincil-vurgu: #d2a679;  /* Açık toprak tonu */
+    --ana-renk: #0f1a13;
+    --yazi-renk: #e8f3e8;
+    --kart-renk: #1a291f;
+    --vurgu-renk: #7db373;
+    --ikincil-vurgu: #d2a679;
 }
 
 body {
     background-color: var(--ana-renk);
     color: var(--yazi-renk);
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
     transition: all 0.4s ease;
     margin: 0;
-    padding: 0;
     line-height: 1.7;
 }
 
-/* Navigasyon: Doğal Geçiş */
+/* Navigasyon */
 nav {
     display: flex;
     justify-content: space-between;
@@ -43,7 +42,7 @@ nav {
     font-size: 1.4rem;
 }
 
-/* Hakkımda: Daha Yumuşak Bir Karşılama */
+/* Profil Bölümü */
 .profil-konteyner {
     text-align: center;
     padding: 60px 20px;
@@ -53,7 +52,7 @@ nav {
 .profil-foto {
     width: 160px;
     height: 160px;
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; /* Organik, yuvarlak olmayan şekil */
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%;
     border: 4px solid var(--vurgu-renk);
     object-fit: cover;
     margin-bottom: 20px;
@@ -61,10 +60,10 @@ nav {
 }
 
 .profil-foto:hover {
-    border-radius: 50%; /* Üstüne gelince düzelen efekt */
+    border-radius: 50%;
 }
 
-/* Yetenek Barları (Skill Bars) [cite: 20, 32] */
+/* Yetenek Barları */
 .yetenek-alani {
     max-width: 650px;
     margin: 0 auto;
@@ -86,83 +85,7 @@ nav {
     transition: width 1.8s cubic-bezier(0.1, 0.5, 0.5, 1);
 }
 
-/* Proje Galerisi (Dinamik Listeleme Tasarımı) [cite: 17, 35] */
-.proje-galerisi {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    padding: 40px 8%;
-}
-
-.proje-karti {
-    background-color: var(--kart-renk);
-    border-radius: 15px; /* Daha yumuşak köşeler */
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-    border: 1px solid rgba(0,0,0,0.02);
-    transition: all 0.3s ease;
-}
-
-.proje-karti:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(79, 121, 66, 0.15); /* Yeşil tonlu gölge */
-}
-
-.proje-karti img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-/* Doğal Butonlar */
-button {
-    padding: 12px 25px;
-    margin: 8px;
-    cursor: pointer;
-    border: 2px solid var(--vurgu-renk);
-    border-radius: 30px; /* Yuvarlak hatlar */
-    background-color: transparent;
-    color: var(--vurgu-renk);
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: var(--vurgu-renk);
-    color: white;
-}
-
-/* Responsive Düzenlemeler [cite: 8, 32] */
-@media (max-width: 768px) {
-    .proje-galerisi {
-        grid-template-columns: 1fr;
-        padding: 20px 5%;
-    }
-    
-    .profil-foto {
-        width: 130px;
-        height: 130px;
-    }
-}
-
-/* İletişim ve Footer */
-footer {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: var(--kart-renk);
-    margin-top: 50px;
-    border-top: 1px solid rgba(0,0,0,0.05);
-}
-
-.sosyal-linkler a {
-    color: var(--ikincil-vurgu);
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-/* Ders Kartları Tasarımı */
+/* Akademik Birikim (Ders Kartları) */
 .ders-konteyner {
     display: flex;
     flex-wrap: wrap;
@@ -178,13 +101,70 @@ footer {
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    cursor: default;
+    transition: 0.3s;
 }
 
-.ders-karti:hover {
+/* Yaprak Temalı Proje Kartları (Güncellenmiş Bölüm) */
+.proje-galerisi {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 40px 8%;
+}
+
+.proje-karti {
+    background-color: var(--kart-renk);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 70%; 
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(79, 121, 66, 0.08);
+    border: 1px solid rgba(79, 121, 66, 0.05);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: center;
+}
+
+.proje-karti:hover {
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 20px 40px rgba(79, 121, 66, 0.2);
+    border-radius: 50%;
+}
+
+.proje-karti img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 4px solid var(--ana-renk);
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Butonlar ve Linkler */
+button {
+    padding: 12px 25px;
+    cursor: pointer;
+    border: 2px solid var(--vurgu-renk);
+    border-radius: 30px;
+    background-color: transparent;
+    color: var(--vurgu-renk);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
     background-color: var(--vurgu-renk);
     color: white;
-    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--kart-renk);
+    margin-top: 50px;
+}
+
+.sosyal-linkler a {
+    color: var(--ikincil-vurgu);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
